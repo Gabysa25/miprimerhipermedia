@@ -15,80 +15,41 @@
                 <td class="menu">
                     <ul>
                         <li><a href="#">Inicio</a></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropbtn" onclick="toggleConcepto()">Inicio</a>
-                        </li>
-                        
-                        <div id="concepto" class="concepto" style="display: none;">
-                            <h2>Concepto</h2>
-                            <p>"Black Swan" explora el miedo de un artista a perder la pasión por su arte. Inspirado en la frase de Martha Graham, el tema refleja la lucha interna contra la pérdida del significado en la creatividad, simbolizada por el "cisne negro".</p>
-                        
-                            <h2>Características principales</h2>
-                        
-                            <h3>🎵 Sonido y género:</h3>
-                            <ul>
-                                <li>Fusión de hip-hop, trap y música clásica.</li>
-                                <li>Uso de cuerdas melancólicas y ritmos envolventes.</li>
-                                <li>Atmósfera introspectiva y emotiva.</li>
-                            </ul>
-                        
-                            <h3>✍️ Letras y simbolismo:</h3>
-                            <ul>
-                                <li>Metáforas sobre el vacío creativo y la transformación.</li>
-                                <li>Imágenes de agua, oscuridad y pérdida de control.</li>
-                                <li>Contraste entre el deseo de crear y el miedo a la indiferencia.</li>
-                            </ul>
-                        
-                            <h3>🎭 Coreografía y estética:</h3>
-                            <ul>
-                                <li>Inspirada en el ballet y la danza contemporánea.</li>
-                                <li>Representa la lucha entre el "cisne blanco" y el "cisne negro".</li>
-                                <li>Movimientos expresivos que reflejan la transformación interna.</li>
-                            </ul>
-                        
-                            <h3>🎬 Videoclip cinematográfico:</h3>
-                            <ul>
-                                <li>Ambientes oscuros y teatrales con iluminación dramática.</li>
-                                <li>Danza como medio de expresión emocional.</li>
-                                <li>Juego de reflejos y sombras que simbolizan el conflicto interno.</li>
-                            </ul>
-                        </div>
-                        
-                        <style>
-                            .concepto {
-                                background-color: #222;
-                                color: white;
-                                padding: 20px;
-                                border-radius: 10px;
-                                width: 80%;
-                                margin: auto;
-                                text-align: left;
-                            }
-                        
-                            .concepto h2, .concepto h3 {
-                                color: #4CAF50;
-                            }
-                        
-                            .dropbtn {
-                                text-decoration: none;
-                                padding: 10px 20px;
-                                display: block;
-                                background-color: #4CAF50;
-                                color: white;
-                                cursor: pointer;
-                            }
-                        </style>
-                        
-                        <script>
-                            function toggleConcepto() {
-                                var concepto = document.getElementById("concepto");
-                                if (concepto.style.display === "none") {
-                                    concepto.style.display = "block";
-                                } else {
-                                    concepto.style.display = "none";
-                                }
-                            }
-                        </script>                        
+                        <a href="#" onclick="toggleConcepto()">Inicio</a>
+
+<div id="concepto" style="display: none;">
+    <h2>Concepto</h2>
+    <p>"Black Swan" explora el miedo de un artista a perder la pasión por su arte. Inspirado en la frase de Martha Graham, el tema refleja la lucha interna contra la pérdida del significado en la creatividad, simbolizada por el "cisne negro".</p>
+    
+    <h3>Características principales</h3>
+    <ul>
+        <li><strong>🎵 Sonido y género:</strong>
+            <ul>
+                <li>Fusión de hip-hop, trap y música clásica.</li>
+                <li>Uso de cuerdas melancólicas y ritmos envolventes.</li>
+                <li>Atmósfera introspectiva y emotiva.</li>
+            </ul>
+        </li>
+        <li><strong>✍️ Letras y simbolismo:</strong>
+            <ul>
+                <li>Metáforas sobre el vacío creativo y la transformación.</li>
+                <li>Imágenes de agua, oscuridad y pérdida de control.</li>
+                <li>Contraste entre el deseo de crear y el miedo a la indiferencia.</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<script>
+    function toggleConcepto() {
+        var concepto = document.getElementById("concepto");
+        if (concepto.style.display === "none") {
+            concepto.style.display = "block";
+        } else {
+            concepto.style.display = "none";
+        }
+    }
+</script>  
                         <li><a href="#">Letra</a></li>
                         <li><a href="#">Video</a></li>
                         <iframe width="600" height="340" src="https://www.youtube.com/embed/0lapF4DQPKQ"
