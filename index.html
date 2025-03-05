@@ -10,55 +10,78 @@
             background-color: #000000; /* Negro */
             color: #ffffff; /* Blanco */
             font-family: Arial, sans-serif;
-            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
         }
 
-        /* Texto del marquee */
-        marquee {
-            color: #c9a227; /* Dorado */
-            font-size: 20px;
-            font-weight: bold;
-        }
-
-        /* Estilos de la tabla */
-        table {
-            margin: 20px auto;
-            border-collapse: collapse;
-            width: 80%;
-        }
-
-        td {
-            padding: 15px;
-            border: 1px solid #ffffff; /* Bordes blancos */
-        }
-
-        /* Contenedor del texto con fondo gris oscuro */
-        #concepto {
+        /* Menú lateral */
+        .menu {
+            width: 200px;
+            height: 100vh; /* 100% de la pantalla */
             background-color: #1c1c1c; /* Gris oscuro */
             padding: 20px;
-            border-radius: 10px;
-            width: 60%;
-            margin: 20px auto;
-            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2);
-            display: none; /* Oculto por defecto */
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-        /* Estilos de los títulos */
-        h1, h2, h3 {
-            color: #c9a227; /* Dorado */
-        }
-
-        /* Estilos del menú */
         .menu a {
             color: #c9a227; /* Dorado */
             font-size: 18px;
             text-decoration: none;
             padding: 10px;
-            display: inline-block;
+            display: block;
+            text-align: center;
+            width: 100%;
         }
 
         .menu a:hover {
-            color: #4b0082; /* Morado */
+            background-color: #4b0082; /* Morado */
+            color: white;
+        }
+
+        /* Contenedor principal */
+        .content {
+            margin-left: 220px; /* Para que no se monte sobre el menú */
+            padding: 20px;
+            width: 80%;
+        }
+
+        /* Estilos del título */
+        .header {
+            text-align: center;
+        }
+
+        .header img {
+            width: 100px;
+            vertical-align: middle;
+        }
+
+        .header h1 {
+            display: inline;
+            color: #c9a227; /* Dorado */
+        }
+
+        /* Sección Concepto */
+        #concepto {
+            background-color: #1c1c1c; /* Gris oscuro */
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            margin: 20px auto;
+            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2);
+            display: none;
+            text-align: justify;
+        }
+
+        /* Estilos de la galería */
+        .gallery {
+            display: none;
+            margin-top: 20px;
         }
 
         /* Footer */
@@ -67,71 +90,74 @@
             padding: 10px;
             background-color: #1c1c1c; /* Gris oscuro */
             color: #c9a227; /* Dorado */
+            text-align: center;
         }
     </style>
 </head>
 <body>
 
-    <marquee>Bienvenido a la página de Black Swan - BTS 🎶</marquee>
+    <!-- Menú lateral -->
+    <div class="menu">
+        <a href="#" onclick="toggleConcepto()">Inicio</a>
+        <a href="#">Letra</a>
+        <a href="#">Video</a>
+        <a href="#" onclick="toggleGaleria()">Galería</a>
+    </div>
 
-    <table border="1" cellpadding="10" cellspacing="10">
-        <tr>
-            <td class="center" style="text-align: center;">
-                <div style="display: flex; align-items: center; justify-content: center; gap: 15px;">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeqPVYpED8bOY8QumZ1wPECCZlWO1iEwS6bg&s" width="100">
-                    <h1 style="margin: 0;">Black Swan</h1>
-                </div>
-            </td>
-        </tr>
-        
-        <tr>
-            <td class="menu">
-                <ul>
-                    <li><a href="#" onclick="toggleConcepto()">Inicio</a></li>
-                    <li><a href="#">Letra</a></li>
-                    <li><a href="#">Video</a></li>
-                    <li><a href="https://ibighit.com/bts/kor/discography/detail/map_of_the_soul-7.html" target="_blank">Galería</a></li>
-                </ul>
-                
-                <div id="concepto">
-                    <h2>Concepto</h2>
-                    <p>"Black Swan" explora el miedo de un artista a perder la pasión por su arte...</p>
-                    
-                    <h3>Características principales</h3>
+    <!-- Contenedor principal -->
+    <div class="content">
+        <div class="header">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeqPVYpED8bOY8QumZ1wPECCZlWO1iEwS6bg&s">
+            <h1>Black Swan</h1>
+        </div>
+
+        <!-- Sección Concepto -->
+        <div id="concepto">
+            <h2>Concepto</h2>
+            <p>"Black Swan" explora el miedo de un artista a perder la pasión por su arte. Inspirado en la frase de Martha Graham, el tema refleja la lucha interna contra la pérdida del significado en la creatividad, simbolizada por el "cisne negro".</p>
+            
+            <h3>Características principales</h3>
+            <ul>
+                <li><strong>🎵 Sonido y género:</strong>
                     <ul>
-                        <li><strong>🎵 Sonido y género:</strong>
-                            <ul>
-                                <li>Fusión de hip-hop, trap y música clásica.</li>
-                                <li>Uso de cuerdas melancólicas y ritmos envolventes.</li>
-                                <li>Atmósfera introspectiva y emotiva.</li>
-                            </ul>
-                        </li>
-                        <li><strong>✍️ Letras y simbolismo:</strong>
-                            <ul>
-                                <li>Metáforas sobre el vacío creativo y la transformación.</li>
-                                <li>Imágenes de agua, oscuridad y pérdida de control.</li>
-                                <li>Contraste entre el deseo de crear y el miedo a la indiferencia.</li>
-                            </ul>
-                        </li>
+                        <li>Fusión de hip-hop, trap y música clásica.</li>
+                        <li>Uso de cuerdas melancólicas y ritmos envolventes.</li>
+                        <li>Atmósfera introspectiva y emotiva.</li>
                     </ul>
-                </div>
+                </li>
+                <li><strong>✍️ Letras y simbolismo:</strong>
+                    <ul>
+                        <li>Metáforas sobre el vacío creativo y la transformación.</li>
+                        <li>Imágenes de agua, oscuridad y pérdida de control.</li>
+                        <li>Contraste entre el deseo de crear y el miedo a la indiferencia.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
 
-                <iframe width="600" height="340" src="https://www.youtube.com/embed/0lapF4DQPKQ"
-                        title="Black Swan - BTS" frameborder="0" allowfullscreen>
-                </iframe>
-                
-                <p>
-                    <a href="https://www.youtube.com/embed/0lapF4DQPKQ" target="_blank">
-                        Ver en YouTube
-                    </a>
-                </p>
-            </td>
-        </tr>
-    </table>
+        <!-- Video -->
+        <iframe width="600" height="340" src="https://www.youtube.com/embed/0lapF4DQPKQ"
+                title="Black Swan - BTS" frameborder="0" allowfullscreen>
+        </iframe>
 
-    <footer>
-        <p>© 2025 Página noventera de Black Swan - BTS</p>
-    </footer>
+        <p>
+            <a href="https://www.youtube.com/embed/0lapF4DQPKQ" target="_blank">
+                Ver en YouTube
+            </a>
+        </p>
+
+        <!-- Sección Galería -->
+        <div id="galeria" class="gallery">
+            <h2>Galería</h2>
+            <iframe width="600" height="340" src="https://ibighit.com/bts/kor/discography/detail/map_of_the_soul-7.html"
+                    title="Map of the Soul 7 - BTS" frameborder="0" allowfullscreen>
+            </iframe>
+        </div>
+
+        <footer>
+            <p>© 2025 Página noventera de Black Swan - BTS</p>
+        </footer>
+    </div>
 
     <script>
         function toggleConcepto() {
@@ -140,6 +166,15 @@
                 concepto.style.display = "block";
             } else {
                 concepto.style.display = "none";
+            }
+        }
+
+        function toggleGaleria() {
+            var galeria = document.getElementById("galeria");
+            if (galeria.style.display === "none") {
+                galeria.style.display = "block";
+            } else {
+                galeria.style.display = "none";
             }
         }
     </script>
