@@ -11,41 +11,42 @@
             color: white;
             margin: 0;
             padding: 0;
+            text-align: center;
         }
         marquee {
             font-size: 20px;
             font-weight: bold;
             color: cyan;
         }
-        .container {
-            display: flex;
+        table {
+            width: 80%;
+            margin: auto;
+            border-collapse: collapse;
+        }
+        .center {
+            text-align: center;
+            vertical-align: middle;
         }
         .menu {
-            width: 200px;
-            background-color: #111;
-            padding: 15px;
-            height: 100vh; 
+            text-align: center;
+            background-color: #222;
+            padding: 10px;
         }
         .menu a {
-            display: block;
             color: white;
             text-decoration: none;
-            padding: 10px;
-            margin: 5px 0;
-            background-color: #222;
-            text-align: center;
+            margin: 0 15px;
+            font-size: 18px;
         }
         .menu a:hover {
-            background-color: cyan;
-            color: black;
-        }
-        .content {
-            flex-grow: 1;
-            padding: 20px;
+            color: cyan;
         }
         .seccion {
             display: none;
             text-align: justify;
+            padding: 20px;
+            width: 80%;
+            margin: auto;
         }
         .video-container {
             display: flex;
@@ -56,103 +57,97 @@
             max-width: 100%;
             height: auto;
         }
-        /* Estilo para el título con imagen */
-        .titulo {
-            text-align: center;
-            margin-top: 20px;
-        }
-        .titulo img {
-            width: 100px;
-            vertical-align: middle;
-        }
-        .titulo h1 {
-            display: inline-block;
-            margin-left: 15px;
-            font-size: 30px;
-        }
     </style>
 </head>
 <body>
     <marquee>Bienvenido a la página de Black Swan - BTS 🎶</marquee>
 
-    <div class="titulo">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeqPVYpED8bOY8QumZ1wPECCZlWO1iEwS6bg&s">
-        <h1>Black Swan</h1>
+    <table border="1" cellpadding="10" cellspacing="10">
+        <tr>
+            <td class="center">
+                <div style="display: flex; align-items: center; justify-content: center; gap: 15px;">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeqPVYpED8bOY8QumZ1wPECCZlWO1iEwS6bg&s" width="100">
+                    <h1 style="margin: 0;">Black Swan</h1>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td class="menu">
+                <a href="#" onclick="mostrarSeccion('inicio')">Inicio</a>
+                <a href="#" onclick="mostrarSeccion('galeria')">Galería</a>
+                <a href="#" onclick="mostrarSeccion('letra')">Letra</a>
+                <a href="#" onclick="mostrarSeccion('video')">Video</a>
+            </td>
+        </tr>
+    </table>
+
+    <!-- Secciones -->
+    <div id="inicio" class="seccion">
+        <h2>Concepto</h2>
+        <p>"Black Swan" explora el miedo de un artista a perder la pasión por su arte. Inspirado en la frase de Martha Graham, el tema refleja la lucha interna contra la pérdida del significado en la creatividad, simbolizada por el "cisne negro".</p>
+        
+        <h3>Características principales</h3>
+        <ul>
+            <li><strong>🎵 Sonido y género:</strong>
+                <ul>
+                    <li>Fusión de hip-hop, trap y música clásica.</li>
+                    <li>Uso de cuerdas melancólicas y ritmos envolventes.</li>
+                    <li>Atmósfera introspectiva y emotiva.</li>
+                </ul>
+            </li>
+            <li><strong>✍️ Letras y simbolismo:</strong>
+                <ul>
+                    <li>Metáforas sobre el vacío creativo y la transformación.</li>
+                    <li>Imágenes de agua, oscuridad y pérdida de control.</li>
+                    <li>Contraste entre el deseo de crear y el miedo a la indiferencia.</li>
+                </ul>
+            </li>
+        </ul>
     </div>
 
-    <div class="container">
-        <!-- Menú lateral -->
-        <nav class="menu">
-            <a href="#" onclick="mostrarSeccion('inicio')">Inicio</a>
-            <a href="#" onclick="mostrarSeccion('galeria')">Galería</a>
-            <a href="#" onclick="mostrarSeccion('letra')">Letra</a>
-            <a href="#" onclick="mostrarSeccion('video')">Video</a>
-        </nav>
+    <div id="galeria" class="seccion">
+        <h2>Galería</h2>
+        <p>Aquí puedes ver imágenes y contenido sobre Black Swan.</p>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeqPVYpED8bOY8QumZ1wPECCZlWO1iEwS6bg&s" width="300">
+        <p>
+            <a href="https://ibighit.com/bts/kor/discography/detail/map_of_the_soul-7.html" target="_blank">
+                Ver más en la página oficial
+            </a>
+        </p>
+        <iframe width="600" height="340" src="https://ibighit.com/bts/kor/discography/detail/map_of_the_soul-7.html"
+                title="Map of the Soul: 7 - BTS" frameborder="0" allowfullscreen>
+        </iframe>
+    </div>
 
-        <!-- Contenido de las secciones -->
-        <div class="content">
-            <div id="inicio" class="seccion">
-                <h2>Concepto</h2>
-                <p>"Black Swan" explora el miedo de un artista a perder la pasión por su arte. Inspirado en la frase de Martha Graham, el tema refleja la lucha interna contra la pérdida del significado en la creatividad, simbolizada por el "cisne negro".</p>
-                
-                <h3>Características principales</h3>
-                <ul>
-                    <li><strong>🎵 Sonido y género:</strong>
-                        <ul>
-                            <li>Fusión de hip-hop, trap y música clásica.</li>
-                            <li>Uso de cuerdas melancólicas y ritmos envolventes.</li>
-                            <li>Atmósfera introspectiva y emotiva.</li>
-                        </ul>
-                    </li>
-                    <li><strong>✍️ Letras y simbolismo:</strong>
-                        <ul>
-                            <li>Metáforas sobre el vacío creativo y la transformación.</li>
-                            <li>Imágenes de agua, oscuridad y pérdida de control.</li>
-                            <li>Contraste entre el deseo de crear y el miedo a la indiferencia.</li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
+    <div id="letra" class="seccion">
+        <h2>Letra</h2>
+        <p>La letra de "Black Swan" es una expresión poética sobre el miedo a perder la pasión por la música.</p>
+    </div>
 
-            <div id="galeria" class="seccion">
-                <h2>Galería</h2>
-                <p>Aquí puedes ver imágenes y contenido sobre Black Swan.</p>
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeqPVYpED8bOY8QumZ1wPECCZlWO1iEwS6bg&s" width="300">
-            </div>
-
-            <div id="letra" class="seccion">
-                <h2>Letra</h2>
-                <p>La letra de "Black Swan" es una expresión poética sobre el miedo a perder la pasión por la música.</p>
-            </div>
-
-            <div id="video" class="seccion">
-                <h2>Video</h2>
-                <div class="video-container">
-                    <iframe width="600" height="340" src="https://www.youtube.com/embed/0lapF4DQPKQ"
-                        title="Black Swan - BTS" frameborder="0" allowfullscreen>
-                    </iframe>
-                </div>
-            </div>
+    <div id="video" class="seccion">
+        <h2>Video</h2>
+        <div class="video-container">
+            <iframe width="600" height="340" src="https://www.youtube.com/embed/0lapF4DQPKQ"
+                title="Black Swan - BTS" frameborder="0" allowfullscreen>
+            </iframe>
         </div>
     </div>
 
     <footer>
-        <p style="text-align: center;">© 2025 Página noventera de Black Swan - BTS</p>
+        <p>© 2025 Página noventera de Black Swan - BTS</p>
     </footer>
 
     <script>
         function mostrarSeccion(seccion) {
-            // Oculta todas las secciones
             document.querySelectorAll('.seccion').forEach(function(div) {
                 div.style.display = 'none';
             });
-
-            // Muestra solo la sección seleccionada
             document.getElementById(seccion).style.display = 'block';
         }
     </script>
 </body>
 </html>
+
 
 
 
