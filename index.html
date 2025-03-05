@@ -1,81 +1,152 @@
-
-<body>
-        <marquee>Bienvenido a la página de Black Swan - BTS 🎶</marquee>
-
-        <table border="1" cellpadding="10" cellspacing="10" align="center">
-            <tr>
-                <td class="center" style="text-align: center; vertical-align: middle;">
-                    <div style="display: flex; align-items: center; justify-content: center; gap: 15px;">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeqPVYpED8bOY8QumZ1wPECCZlWO1iEwS6bg&s" width="100">
-                        <h1 style="margin: 0;">Black Swan</h1>
-                    </div>
-                </td>
-            </tr>
-            
-                <td class="menu">
-                    <ul>
-                        <a href="#" onclick="toggleConcepto()">Inicio</a>
-
-<div id="concepto" style="display: none;">
-    <h2>Concepto</h2>
-    <p>"Black Swan" explora el miedo de un artista a perder la pasión por su arte. Inspirado en la frase de Martha Graham, el tema refleja la lucha interna contra la pérdida del significado en la creatividad, simbolizada por el "cisne negro".</p>
-    
-    <h3>Características principales</h3>
-    <ul>
-        <li><strong>🎵 Sonido y género:</strong>
-            <ul>
-                <li>Fusión de hip-hop, trap y música clásica.</li>
-                <li>Uso de cuerdas melancólicas y ritmos envolventes.</li>
-                <li>Atmósfera introspectiva y emotiva.</li>
-            </ul>
-        </li>
-        <li><strong>✍️ Letras y simbolismo:</strong>
-            <ul>
-                <li>Metáforas sobre el vacío creativo y la transformación.</li>
-                <li>Imágenes de agua, oscuridad y pérdida de control.</li>
-                <li>Contraste entre el deseo de crear y el miedo a la indiferencia.</li>
-            </ul>
-        </li>
-    </ul>
-</div>
-
-<script>
-    function toggleConcepto() {
-        var concepto = document.getElementById("concepto");
-        if (concepto.style.display === "none") {
-            concepto.style.display = "block";
-        } else {
-            concepto.style.display = "none";
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Swan - BTS</title>
+    <style>
+        /* Fondo general de la página */
+        body {
+            background-color: #000000; /* Negro */
+            color: #ffffff; /* Blanco */
+            font-family: Arial, sans-serif;
+            text-align: center;
         }
-    }
-</script>  
-                        <li><a href="#">Letra</a></li>
-                        <li><a href="#">Video</a></li>
-                        <iframe width="600" height="340" src="https://www.youtube.com/embed/0lapF4DQPKQ"
+
+        /* Texto del marquee */
+        marquee {
+            color: #c9a227; /* Dorado */
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /* Estilos de la tabla */
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+            width: 80%;
+        }
+
+        td {
+            padding: 15px;
+            border: 1px solid #ffffff; /* Bordes blancos */
+        }
+
+        /* Contenedor del texto con fondo gris oscuro */
+        #concepto {
+            background-color: #1c1c1c; /* Gris oscuro */
+            padding: 20px;
+            border-radius: 10px;
+            width: 60%;
+            margin: 20px auto;
+            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2);
+            display: none; /* Oculto por defecto */
+        }
+
+        /* Estilos de los títulos */
+        h1, h2, h3 {
+            color: #c9a227; /* Dorado */
+        }
+
+        /* Estilos del menú */
+        .menu a {
+            color: #c9a227; /* Dorado */
+            font-size: 18px;
+            text-decoration: none;
+            padding: 10px;
+            display: inline-block;
+        }
+
+        .menu a:hover {
+            color: #4b0082; /* Morado */
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #1c1c1c; /* Gris oscuro */
+            color: #c9a227; /* Dorado */
+        }
+    </style>
+</head>
+<body>
+
+    <marquee>Bienvenido a la página de Black Swan - BTS 🎶</marquee>
+
+    <table border="1" cellpadding="10" cellspacing="10">
+        <tr>
+            <td class="center" style="text-align: center;">
+                <div style="display: flex; align-items: center; justify-content: center; gap: 15px;">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeqPVYpED8bOY8QumZ1wPECCZlWO1iEwS6bg&s" width="100">
+                    <h1 style="margin: 0;">Black Swan</h1>
+                </div>
+            </td>
+        </tr>
+        
+        <tr>
+            <td class="menu">
+                <ul>
+                    <li><a href="#" onclick="toggleConcepto()">Inicio</a></li>
+                    <li><a href="#">Letra</a></li>
+                    <li><a href="#">Video</a></li>
+                    <li><a href="https://ibighit.com/bts/kor/discography/detail/map_of_the_soul-7.html" target="_blank">Galería</a></li>
+                </ul>
+                
+                <div id="concepto">
+                    <h2>Concepto</h2>
+                    <p>"Black Swan" explora el miedo de un artista a perder la pasión por su arte...</p>
+                    
+                    <h3>Características principales</h3>
+                    <ul>
+                        <li><strong>🎵 Sonido y género:</strong>
+                            <ul>
+                                <li>Fusión de hip-hop, trap y música clásica.</li>
+                                <li>Uso de cuerdas melancólicas y ritmos envolventes.</li>
+                                <li>Atmósfera introspectiva y emotiva.</li>
+                            </ul>
+                        </li>
+                        <li><strong>✍️ Letras y simbolismo:</strong>
+                            <ul>
+                                <li>Metáforas sobre el vacío creativo y la transformación.</li>
+                                <li>Imágenes de agua, oscuridad y pérdida de control.</li>
+                                <li>Contraste entre el deseo de crear y el miedo a la indiferencia.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <iframe width="600" height="340" src="https://www.youtube.com/embed/0lapF4DQPKQ"
                         title="Black Swan - BTS" frameborder="0" allowfullscreen>
                 </iframe>
                 
                 <p>
                     <a href="https://www.youtube.com/embed/0lapF4DQPKQ" target="_blank">
+                        Ver en YouTube
                     </a>
                 </p>
-                <li><a href="https://ibighit.com/bts/kor/discography/detail/map_of_the_soul-7.html" target="_blank">Galería</a></li>
-                <iframe width="600" height="340" src="https://ibighit.com/bts/kor/discography/detail/map_of_the_soul-7.html"
-                        title="Map map_of_the_soul-7 BTS" frameborder="0" allowfullscreen>        
-                            
-                    <p>"Black Swan" es una canción de BTS lanzada en 2020, con un profundo significado sobre el miedo a perder la pasión por la música.</p>
-                    <p>Explora la canción y disfruta de su arte único.</p>
-                </td>
-            </tr>
-        </table>
+            </td>
+        </tr>
+    </table>
 
-        <footer>
-            <p>© 2025 Página noventera de Black Swan - BTS</p>
-        </footer>
-    </div>
+    <footer>
+        <p>© 2025 Página noventera de Black Swan - BTS</p>
+    </footer>
+
+    <script>
+        function toggleConcepto() {
+            var concepto = document.getElementById("concepto");
+            if (concepto.style.display === "none") {
+                concepto.style.display = "block";
+            } else {
+                concepto.style.display = "none";
+            }
+        }
+    </script>
 
 </body>
 </html>
+
 
 
 
