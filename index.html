@@ -104,7 +104,13 @@
             <h2>Video</h2>
                 <div class="video-fallback">
                     <a href="https://www.youtube.com/watch?v=0lapF4DQPKQ" target="_blank" rel="noopener noreferrer">
-                        <img src="https://img.youtube.com/vi/0lapF4DQPKQ/hqdefault.jpg" alt="Black Swan - Ver en YouTube" style="width:100%;height:90vh;object-fit:cover;">
+                        <img src="https://img.youtube.com/vi/0lapF4DQPKQ/maxresdefault.jpg"
+                            srcset="https://img.youtube.com/vi/0lapF4DQPKQ/maxresdefault.jpg 1280w, https://img.youtube.com/vi/0lapF4DQPKQ/hqdefault.jpg 480w"
+                            sizes="100vw"
+                            loading="lazy"
+                            alt="Black Swan - Ver en YouTube"
+                            onerror="this.onerror=null;this.src='https://img.youtube.com/vi/0lapF4DQPKQ/hqdefault.jpg';"
+                            style="width:100%;height:90vh;object-fit:cover;">
                         <p style="text-align:center;color:cyan;margin-top:8px;">Ver en YouTube</p>
                     </a>
                 </div>
