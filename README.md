@@ -1,2 +1,2 @@
 # miprimerhipermedia
-primer codigo de versiones que creare en github
+Primer código de versiones que crearé en GitHub.
