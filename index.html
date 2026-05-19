@@ -41,6 +41,33 @@
             display: none;
             text-align: justify;
         }
+        .lyrics-tabs {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 16px;
+        }
+        .lyrics-tabs button {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 8px 14px;
+            border-radius: 999px;
+            cursor: pointer;
+            transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+            font-size: 0.95rem;
+        }
+        .lyrics-tabs button:hover,
+        .lyrics-tabs button.active {
+            background: rgba(0, 255, 255, 0.12);
+            border-color: cyan;
+            color: cyan;
+        }
+        .lyrics-content pre {
+            white-space: pre-wrap;
+            line-height: 1.65;
+            margin: 0;
+        }
         .video-container iframe,
         .galeria iframe {
             width: 100%;
@@ -136,7 +163,40 @@
 
         <div id="sobre_bts" class="seccion">
             <h2>Sobre BTS</h2>
-            <p>BTS es un grupo surcoreano de fama mundial que ha redefinido el K-pop con su estilo innovador y mensajes profundos en sus canciones...</p>
+
+            <h3>✦ Origen</h3>
+            <p>BTS fue creado por Bang Si-hyuk bajo la empresa Big Hit Entertainment, originalmente como un proyecto con enfoque hip-hop y letras honestas sobre la vida juvenil. La idea era ofrecer una alternativa más humana y emocional frente a conceptos comerciales perfeccionados.</p>
+            <ul>
+                <li><strong>Miembros (orden de incorporación):</strong> RM, Jin, Suga, J-Hope, Jimin, V, Jungkook.</li>
+                <li><strong>Entrenamiento previo al debut:</strong> años de prácticas intensas de baile y canto, incertidumbre, presión por debutar y dificultades económicas; los miembros compartieron dormitorios pequeños y trabajaron casi a diario para mejorar.</li>
+            </ul>
+
+            <h3>✦ Debut en 2013</h3>
+            <p>El 13 de junio de 2013 BTS debutó oficialmente con "No More Dream", del álbum <em>2 Cool 4 Skool</em>. El nombre "Bangtan Sonyeondan" (roughly "Boy Scouts a prueba de balas") simboliza la idea de proteger a la juventud de críticas y presiones sociales. Desde el inicio, destacaron por letras que abordaban la presión académica, la frustración juvenil y la búsqueda de identidad.</p>
+
+            <h3>✦ Crecimiento y ARMY (2013–2014)</h3>
+            <p>En 2013–2014 lanzaron proyectos como <em>O!RUL8,2?</em> y <em>Skool Luv Affair</em>. Durante esta etapa comenzó a crecer su fandom oficial, ARMY, en gran parte gracias a la cercanía del grupo con los fans mediante Twitter, YouTube, transmisiones en vivo, blogs y material detrás de cámaras.</p>
+
+            <h3>✦ HYYH: la era definitoria (2015)</h3>
+            <p>En 2015 lanzaron <em>The Most Beautiful Moment in Life</em> (HYYH), una serie de álbumes centrada en ansiedad, miedo al futuro, juventud, amistad, crecimiento y pérdida. Canciones como "I Need U" y "Run" marcaron un cambio artístico y ampliaron su reconocimiento internacional.</p>
+
+            <h3>✦ Wings y el salto global (2016)</h3>
+            <p>En 2016 <em>Wings</em> exploró temas de madurez, tentación, culpa y autodescubrimiento, con canciones individuales para cada miembro. Con este álbum dieron el salto de grupo K-pop popular a fenómeno global.</p>
+
+            <h3>✦ Reconocimiento internacional</h3>
+            <p>En 2017 ganaron el premio Top Social Artist en los Billboard Music Awards, un punto de inflexión que impulsó giras globales, apariciones en programas estadounidenses y una presencia internacional creciente.</p>
+
+            <h3>✦ Love Yourself (2017–2018)</h3>
+            <p>La serie <em>Love Yourself</em> giró en torno al amor propio, la autoestima y la aceptación. El mensaje conectó con millones de personas; en 2018 RM habló en la ONU durante la campaña "Love Myself" junto a UNICEF, y el discurso "Speak Yourself" se volvió icónico.</p>
+
+            <h3>✦ Éxito global y récords (2019–2021)</h3>
+            <p>Entre 2019 y 2021 lanzaron <em>Map of the Soul: Persona</em>, <em>Map of the Soul: 7</em> y <em>BE</em>. Durante la pandemia, sencillos como "Dynamite", "Butter" y "Permission to Dance" rompieron récords, llenaron estadios y consolidaron su impacto en el pop mundial.</p>
+
+            <h3>✦ Pausa grupal y proyectos individuales (desde 2022)</h3>
+            <p>Desde 2022 los miembros centraron esfuerzos en proyectos solistas mientras cumplían el servicio militar obligatorio. Cada integrante exploró estilos personales: RM (alternativo e introspectivo), Suga (temas personales), J-Hope (hip-hop), Jimin (lado emocional), V (jazz/R&amp;B), Jungkook (pop global) y Jin (música melódica). Aún así, no hubo confirmación de separación definitiva.</p>
+
+            <h3>✦ Regreso y Arirang (2026)</h3>
+            <p>Tras completar el servicio militar, BTS confirmó su regreso en 2026 con nueva música y una gira mundial. Publicaron el álbum <em>Arirang</em>, inspirado en la identidad cultural coreana y la idea del reencuentro, explorando nostalgia, madurez y conexión emocional. La gira <em>Arirang</em> agotó entradas rápidamente y mostró una versión más madura del grupo en escena.</p>
         </div>
     </div>
 
@@ -152,15 +212,16 @@
             const container = document.getElementById('lyrics-container');
             if(!container) return;
             container.innerHTML = `
-                <div class="lyrics-tabs" style="margin-bottom:12px;">
-                    <button onclick="mostrarLetra('coreano')">Coreano</button>
-                    <button onclick="mostrarLetra('ingles')">Inglés</button>
-                    <button onclick="mostrarLetra('espanol')">Español</button>
+                <div class="lyrics-tabs">
+                    <button class="lyrics-tab active" onclick="mostrarLetra('coreano', this)">Coreano</button>
+                    <button class="lyrics-tab" onclick="mostrarLetra('ingles', this)">Inglés</button>
+                    <button class="lyrics-tab" onclick="mostrarLetra('espanol', this)">Español</button>
                 </div>
                 <div id="coreano" class="lyrics-content" style="display:block;"></div>
                 <div id="ingles" class="lyrics-content" style="display:none;"></div>
                 <div id="espanol" class="lyrics-content" style="display:none;"></div>
-            `;            const coreano = `Do your thang
+            `;
+            const coreano = `Do your thang
 Do your thang
 
 Do your thang with me now
@@ -567,8 +628,10 @@ Sí, sí, sí, sí
             document.getElementById('espanol').innerHTML = `<pre style="white-space:pre-wrap;">${espanol}</pre>`;
         })();
 
-        function mostrarLetra(id){
+        function mostrarLetra(id, button){
             document.querySelectorAll('.lyrics-content').forEach(function(el){ el.style.display='none'; });
+            document.querySelectorAll('.lyrics-tab').forEach(function(tab){ tab.classList.remove('active'); });
+            if(button) button.classList.add('active');
             var sel = document.getElementById(id);
             if(sel) sel.style.display='block';
         }
